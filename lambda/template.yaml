@@ -7,11 +7,10 @@ metadata:
   description: lambda
   tags:
     - aws-lambda
+    - serverless
 spec:
   owner: Murital
   type: serverless
-
-  # these are the steps which are rendered in the frontend with the form input
   parameters:
     - title: Fill in some steps
       required:
@@ -24,9 +23,8 @@ spec:
 #           ui:autofocus: true
 #           ui:options:
 #             rows: 5
-    - title: Description
-      properties:
-        name:
+    
+        Description:
           title: Description
           type: string
     - title: handler
