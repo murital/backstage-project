@@ -15,14 +15,14 @@ spec:
     - title: Fill in some steps
       required:
         - function_name
-#       properties:
-#         function_name:
-#           title: function_name
-#           type: string
-#           description: Unique name of the component
-#           ui:autofocus: true
-#           ui:options:
-#             rows: 5
+      properties:
+        function_name:
+          title: function_name
+          type: string
+          description: Unique name of the component
+          ui:autofocus: true
+          ui:options:
+            rows: 5
 #         description:
 #           title: Description
 #           type: string
