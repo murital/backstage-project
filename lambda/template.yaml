@@ -23,8 +23,8 @@ spec:
 #           ui:autofocus: true
 #           ui:options:
 #             rows: 5
-        Description:
-          title: Description
+        description:
+          title: description
           type: string
         handler:
           title: handler
