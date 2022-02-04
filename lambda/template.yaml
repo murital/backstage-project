@@ -27,11 +27,11 @@ spec:
         name:
           title: Description
           type: string
-#     - title: handler
-#       properties:
-#         name:
-#           title: handler
-#           type: string
+    - title: handler
+      properties:
+        name:
+          title: handler
+          type: string
 #     - title: runtime
 #       properties:
 #         name:
@@ -97,7 +97,7 @@ spec:
         values:
           name: ${{ parameters.name }}
           description: ${{ parameters.name }}
-#           handler: '{{ parameters.handler }}'
+          handler: '{{ parameters.handler }}'
 #           runtime: '{{ parameters.runtime }}'
 #           memory_size: '{{ parameters.memory_size }}'
 #           concurrency: '{{ parameters.concurrency }}'
