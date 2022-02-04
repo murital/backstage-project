@@ -5,7 +5,7 @@ metadata:
   title: AWS-Lambda
   description: Create a new AWS-lambda
   tags:
-    - aws lambda
+    - awslambda
     - terraform
     - serverless
 # spec:
