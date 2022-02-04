@@ -16,6 +16,25 @@ spec:
       required:
         - name
       properties:
+        name:
+          title: Name
+          type: string
+          description: Unique name of the component
+          ui:autofocus: true
+          ui:options:
+            rows: 5
+     - title: Choose a location
+      required:
+        - repoUrl
+      properties:
+        repoUrl:
+          title: Repository Location
+          type: string
+          ui:field: RepoUrlPicker
+          ui:options:
+            allowedHosts:
+              - github.com
+      properties:
         function_name:
           title: name
           type: string
@@ -63,15 +82,22 @@ spec:
 #           title: security_group_ids
 #           type: list(string)
 #           description: security_group_ids
-   
 steps:
-    - id: template-aws-lambda
-      name: Fetch awslambda application Template
+    - id: fetch-base
+      name: Fetch Base
       action: fetch:template
       input:
-#         url: ./lambda-skeleton
+        url: ./template
         values:
-          function_name: '{{ parameters.name }}' 
+          name: ${{ parameters.name }}
+   
+# steps:
+#     - id: template-aws-lambda
+#       name: Fetch awslambda application Template
+#       action: fetch:template
+#       input:
+#          url: ./lambda-skeleton
+#     
 #           description: '{{ parameters.description }}'
 #           handler: '{{ parameters.handler }}'
 #           runtime: '{{ parameters.runtime }}'
