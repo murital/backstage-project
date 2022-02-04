@@ -1,7 +1,7 @@
 module lambda {
   source = "git@github.com:softrams-iac/terraform-aws-lambda.git?ref=1.0.0"
 
-  function_name  = "${{values.name}}"
+  function_name  = "${{values.function_name}}"
   description    = "${{values.description}}"
   handler        = "${{values.handler}}"
   runtime        = "${{values.runtime}}"

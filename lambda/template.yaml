@@ -75,7 +75,7 @@ spec:
       input:
         url: ./lambda-skeleton
         values:
-          name: '{{ parameters.name }}'
+          name: '{{ parameters.function_name }}'
           description: '{{ parameters.description }}'
           handler: '{{ parameters.handler }}'
           runtime: '{{ parameters.runtime }}'
