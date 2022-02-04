@@ -25,7 +25,7 @@ spec:
     - title: Description
       properties:
         name:
-          title: handler
+          title: Description
           type: string
     - title: handler
       properties:
