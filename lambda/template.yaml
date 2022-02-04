@@ -23,21 +23,21 @@ spec:
           ui:autofocus: true
           ui:options:
             rows: 5
-     - title: Choose a location
-      required:
-        - repoUrl
-      properties:
-        repoUrl:
-          title: Repository Location
-          type: string
-          ui:field: RepoUrlPicker
-          ui:options:
-            allowedHosts:
-              - github.com
-      properties:
-        function_name:
-          title: name
-          type: string
+    - title: Choose a location
+        required:
+          - repoUrl
+        properties:
+          repoUrl:
+            title: Repository Location
+            type: string
+            ui:field: RepoUrlPicker
+            ui:options:
+              allowedHosts:
+                - github.com  
+#       properties:
+#         function_name:
+#           title: name
+#           type: string
 #           description: Unique name of the component
 #           ui:autofocus: true
 #           ui:options:
@@ -82,7 +82,7 @@ spec:
 #           title: security_group_ids
 #           type: list(string)
 #           description: security_group_ids
-steps:
+  steps:
     - id: fetch-base
       name: Fetch Base
       action: fetch:template
@@ -90,7 +90,7 @@ steps:
         url: ./template
         values:
           name: ${{ parameters.name }}
-   
+    
 # steps:
 #     - id: template-aws-lambda
 #       name: Fetch awslambda application Template
