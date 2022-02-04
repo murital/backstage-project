@@ -42,31 +42,31 @@ spec:
         name:
           title: memory_size
           type: number
-#     - title: concurrency
-#       properties:
-#         name:
-#           title: concurrency
-#           type: number
-#     - title: lambda_timeout
-#       properties:
-#         name:
-#           title: Decription
-#           type: number
-#     - title: log_retention
-#       properties:
-#         repoUrl:
-#           title: log_retention
-#           type: number
-#     - title: role_arn
-#       properties:
-#         repoUrl:
-#           title: role_arn
-#           type: string
-#     - title: subnet_ids
-#       properties:
-#         repoUrl:
-#           title: Decription
-#           type: list(string)
+    - title: concurrency
+      properties:
+        name:
+          title: concurrency
+          type: number
+    - title: lambda_timeout
+      properties:
+        name:
+          title: Decription
+          type: number
+    - title: log_retention
+      properties:
+        repoUrl:
+          title: log_retention
+          type: number
+    - title: role_arn
+      properties:
+        repoUrl:
+          title: role_arn
+          type: string
+    - title: subnet_ids
+      properties:
+        repoUrl:
+          title: Decription
+          type: list(string)
 #       properties:
 #         repoUrl:
 #           title: Decription
@@ -100,11 +100,11 @@ spec:
           handler: '{{ parameters.handler }}'
           runtime: '{{ parameters.runtime }}'
           memory_size: '{{ parameters.memory_size }}'
-#           concurrency: '{{ parameters.concurrency }}'
-#           lambda_timeout: '{{ parameters.lambda_timeout }}'
-# #           log_retention: '{{ parameters.log_retention }}'
-#           role_arn: '{{ parameters.role_arn }}'
-#           subnet_ids: '{{ parameters.subnet_ids }}'
+          concurrency: '{{ parameters.concurrency }}'
+          lambda_timeout: '{{ parameters.lambda_timeout }}'
+          log_retention: '{{ parameters.log_retention }}'
+          role_arn: '{{ parameters.role_arn }}'
+          subnet_ids: '{{ parameters.subnet_ids }}'
 
 #     - id: fetch-docs
 #       name: Fetch Docs
