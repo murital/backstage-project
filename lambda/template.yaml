@@ -63,17 +63,6 @@ spec:
           ui:options:
           allowedHosts:
             - github.com      
-    - title: Choose a location
-      required:
-        - repoUrl
-      properties:
-        repoUrl:
-          title: Repository Location
-          type: string
-          ui:field: RepoUrlPicker
-          ui:options:
-            allowedHosts:
-              - github.com
 
   # here's the steps that are executed in series in the scaffolder backend
   steps:
