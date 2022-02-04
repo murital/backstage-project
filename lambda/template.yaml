@@ -8,13 +8,13 @@ metadata:
     - awslambda
     - terraform
     - serverless
-# spec:
-#   owner: backstage/techdocs-core
-#   type: service
-#   parameters:
-#     - title: Fill in some steps
-#       required:
-#         - function_name
+spec:
+  owner: backstage/techdocs-core
+  type: service
+  parameters:
+    - title: Fill in some steps
+      required:
+        - function_name
 #       properties:
 #         function_name:
 #           title: function_name
