@@ -31,40 +31,40 @@ spec:
           title: handler
           type: string
     - title: runtime
-          properties:
-            repoUrl:
-              title: runtime
-              type: string
+      properties:
+        repoUrl:
+          title: runtime
+          type: string
     - title: memory_size
-          properties:
-            repoUrl:
-              title: memory_size
-              type: number
+      properties:
+        repoUrl:
+          title: memory_size
+          type: number
     - title: concurrency
-          properties:
-            repoUrl:
-              title: concurrency
-              type: number
+      properties:
+        repoUrl:
+          title: concurrency
+          type: number
     - title: lambda_timeout
-          properties:
-            repoUrl:
-              title: Decription
-              type: number
+      properties:
+        repoUrl:
+          title: Decription
+          type: number
     - title: log_retention
-          properties:
-            repoUrl:
-              title: log_retention
-              type: number
+      properties:
+        repoUrl:
+          title: log_retention
+          type: number
     - title: role_arn
-          properties:
-            repoUrl:
-              title: role_arn
-              type: string
+      properties:
+        repoUrl:
+          title: role_arn
+          type: string
     - title: subnet_ids
-          properties:
-            repoUrl:
-              title: Decription
-              type: list(string)
+      properties:
+        repoUrl:
+          title: Decription
+          type: list(string)
       properties:
         repoUrl:
           title: Decription
