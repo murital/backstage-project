@@ -22,11 +22,11 @@ spec:
           ui:autofocus: true
           ui:options:
             rows: 5
-    - title: Description
-      properties:
-        name:
-          title: Description
-          type: string
+#     - title: Description
+#       properties:
+#         name:
+#           title: Description
+#           type: string
 #     - title: handler
 #       properties:
 #         name:
@@ -96,7 +96,7 @@ spec:
         url: ./template
         values:
           name: ${{ parameters.name }}
-          description: ${{ parameters.name }}
+#           description: ${{ parameters.name }}
 #           handler: '{{ parameters.handler }}'
 #           runtime: '{{ parameters.runtime }}'
 #           memory_size: '{{ parameters.memory_size }}'
