@@ -39,6 +39,6 @@ steps:
       name: Fetch Base
       action: fetch:template
       input:
-        url: ./template
+#         url: ./template
         values:
           name: ${{ parameters.name }}
