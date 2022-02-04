@@ -14,10 +14,10 @@ spec:
   parameters:
     - title: Fill in your lambda Info
       required:
-        - name
+        - function_name
       properties:
         name:
-          title: Name
+          title: function_name
           type: string
           description: Unique name of the component
 #           ui:autofocus: true
