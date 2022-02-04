@@ -16,7 +16,7 @@ spec:
       required:
         - function_name
       properties:
-        name:
+        function_name:
           title: function_name
           type: string
           description: lambda function name
