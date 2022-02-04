@@ -1,7 +1,7 @@
 module lambda {
   source = "git@github.com:softrams-iac/terraform-aws-lambda.git?ref=1.0.0"
 
-  function_name  = "lambda-to-deploy"
+  function_name  = ${{values.name}}
   description    = "description should be here"
   handler        = "index.handler"
   runtime        = "nodejs12.x"

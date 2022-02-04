@@ -70,8 +70,8 @@ spec:
       input:
         url: ./lambda-skeleton
         values:
-          name: ${{ parameters.name }}
-          description: ${{ parameters.name }}
+          name: '{{ parameters.name }}'
+          description: '{{ parameters.name }}'
           handler: '{{ parameters.handler }}'
           runtime: '{{ parameters.runtime }}'
           memory_size: '{{ parameters.memory_size }}'
