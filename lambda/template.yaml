@@ -49,10 +49,15 @@ spec:
         role_arn:
           title: role_arn
           type: string
+    - title: Fill in subnet_ids and security_group_ids
+      properties:
         subnet_ids:
           title: subnet_ids
           type: string
-    - title: Choose a location
+        security_group_ids:
+          title: security_group_ids
+          type: string
+    - title: Choose your location
       required:
         - repoUrl
       properties:
@@ -71,7 +76,7 @@ spec:
         url: ./lambda-skeleton
         values:
           name: '{{ parameters.name }}'
-          description: '{{ parameters.name }}'
+          description: '{{ parameters.description }}'
           handler: '{{ parameters.handler }}'
           runtime: '{{ parameters.runtime }}'
           memory_size: '{{ parameters.memory_size }}'
@@ -80,20 +85,7 @@ spec:
           log_retention: '{{ parameters.log_retention }}'
           role_arn: '{{ parameters.role_arn }}'
           subnet_ids: '{{ parameters.subnet_ids }}'
-          
-    # - id: app-template
-    #   name: Fetch Application Skeleton + Template
-    #   action: fetch:template
-    #   input:
-    #     url: './react-skeleton'
-    #     copyWithoutRender:
-    #       - .github/workflows/*
-    #     values:
-    #       component_id: '{{ parameters.name }}'
-    #       description: '{{ parameters.description }}'
-    #       destination: '{{ parseRepoUrl parameters.repoUrl }}'
-    #       owner: '{{ parameters.owner }}'
-    #       hostname: '{{#if parameters.hostname}}{{parameters.hostname}}{{else}}{{parameters.name}}.softrams.cloud{{/if}}'
+          security_group_ids: '{{parameters.security_group_ids}}'
 
     - id: publish
       name: Publish
