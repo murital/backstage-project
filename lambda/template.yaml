@@ -19,9 +19,9 @@ spec:
           title: Name
           type: string
           description: Unique name of the component
-          ui:autofocus: true
-          ui:options:
-            rows: 5
+#           ui:autofocus: true
+#           ui:options:
+#             rows: 5
     - title: Description
       properties:
         name:
