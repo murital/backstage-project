@@ -61,8 +61,8 @@ spec:
           type: string
           ui:field: RepoUrlPicker
           ui:options:
-          allowedHosts:
-            - github.com      
+            allowedHosts:
+              - github.com      
 
   # here's the steps that are executed in series in the scaffolder backend
   steps:
@@ -104,6 +104,7 @@ spec:
         allowedHosts: ['github.com']
         description: This is ${{ parameters.name }}
         repoUrl: ${{ parameters.repoUrl }}
+        defaultBranch: 'main'
 
     - id: register
       name: Register
