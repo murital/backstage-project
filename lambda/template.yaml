@@ -19,7 +19,7 @@ spec:
         name:
           title: function_name
           type: string
-          description: Unique name of the component
+          description: lambda function name
 #           ui:autofocus: true
 #           ui:options:
 #             rows: 5
