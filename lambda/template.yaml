@@ -19,10 +19,10 @@ spec:
         function_name:
           title: function_name
           type: string
-          description: Unique name of the component
-          ui:autofocus: true
-          ui:options:
-            rows: 5
+#           description: Unique name of the component
+#           ui:autofocus: true
+#           ui:options:
+#             rows: 5
 #         description:
 #           title: Description
 #           type: string
