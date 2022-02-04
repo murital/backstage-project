@@ -1,0 +1,108 @@
+apiVersion: backstage.io/v1beta2
+kind: Template
+metadata:
+  name: aws-lambda-app
+  title: AWS-Lambda
+  description: Create a new AWS-lambda
+  tags:
+    - aws lambda
+    - terraform
+    - serverless
+spec:
+  owner: backstage/techdocs-core
+  type: service
+  parameters:
+    - title: Fill in some steps
+      required:
+        - function_name
+      properties:
+        function_name:
+          title: function_name
+          type: string
+          description: Unique name of the component
+          ui:autofocus: true
+          ui:options:
+            rows: 5
+        description:
+          title: Description
+          type: string
+          description: Description of the component
+        handler:
+          title: handler
+          type: string
+          description: Description of the handler
+        runtime:
+          title: runtime
+          type: string
+          description: runtime
+        memory_size:
+          title: memory_size
+          type: number
+          description: memory_size
+        concurrency:
+          title: concurrency
+          type: number
+          description: concurrency
+        lambda_timeout:
+          title: lambda_timeout
+          type: number
+          description: lambda_timeout
+        log_retention:
+          title: log_retention
+          type: number
+          description: log_retention
+        role_arn:
+          title: role_arn
+          type: string
+          description: role_arn
+        subnet_ids:
+          title: subnet_ids
+          type: list(string)
+          description: subnet_ids
+        security_group_ids:
+          title: security_group_ids
+          type: list(string)
+          description: security_group_ids
+   
+# steps:
+#     - id: template-aws-lambda
+#       name: Fetch awslambda application Template
+#       action: fetch:template
+#       input:
+#         url: ./lambda-skeleton
+#         values:
+#           function_name: '{{ parameters.function_name }}' 
+#           description: '{{ parameters.description }}'
+#           handler: '{{ parameters.handler }}'
+#           runtime: '{{ parameters.runtime }}'
+#           memory_size: '{{ parameters.memory_size }}'
+#           concurrency: '{{ parameters.concurrency }}'
+#           lambda_timeout: '{{ parameters.lambda_timeout }}'
+#           log_retention: '{{ parameters.log_retention }}'
+#           role_arn: '{{ parameters.role_arn }}'
+#           # subnet_ids: '{{ parameters.subnet_ids }}'
+#           # security_group_ids: "{{parameters.security_group_ids}}"
+#     - id: app-template
+#       name: Fetch Application Skeleton + Template
+#       action: fetch:template
+#       input:
+#         url: './react-skeleton'
+#         copyWithoutRender:
+#           - .github/workflows/*
+#         values:
+#           component_id: '{{ parameters.name }}'
+#           description: '{{ parameters.description }}'
+#           destination: '{{ parseRepoUrl parameters.repoUrl }}'
+#           owner: '{{ parameters.owner }}'
+#           hostname: '{{#if parameters.hostname}}{{parameters.hostname}}{{else}}{{parameters.name}}.softrams.cloud{{/if}}'      
+
+#     - id: publish
+#       name: Publish
+#       action: publish:github
+#       input:
+#         allowedHosts: ['github.com']
+#         description: 'This is {{ parameters.function_name}}'
+#         repoUrl: '{{ parameters.repoUrl }}'
+#         defaultBranch: main 
+# output:
+#     remoteUrl: '{{ steps.publish.output.remoteUrl }}' 
