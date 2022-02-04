@@ -14,10 +14,10 @@ spec:
   parameters:
     - title: Fill in some steps
       required:
-        - function_name
+        - name
       properties:
         function_name:
-          title: function_name
+          title: name
           type: string
 #           description: Unique name of the component
 #           ui:autofocus: true
@@ -71,7 +71,7 @@ steps:
       input:
 #         url: ./lambda-skeleton
         values:
-          function_name: '{{ parameters.function_name }}' 
+          function_name: '{{ parameters.name }}' 
 #           description: '{{ parameters.description }}'
 #           handler: '{{ parameters.handler }}'
 #           runtime: '{{ parameters.runtime }}'
