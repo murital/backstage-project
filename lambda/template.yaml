@@ -110,13 +110,20 @@ spec:
           log_retention: '{{ parameters.log_retention }}'
           role_arn: '{{ parameters.role_arn }}'
           subnet_ids: '{{ parameters.subnet_ids }}'
-
-#     - id: fetch-docs
-#       name: Fetch Docs
-#       action: fetch:plain
-#       input:
-#         targetPath: ./community
-#         url: https://github.com/backstage/community/tree/main/backstage-community-sessions
+          
+    - id: app-template
+      name: Fetch Application Skeleton + Template
+      action: fetch:template
+      input:
+        url: './react-skeleton'
+        copyWithoutRender:
+          - .github/workflows/*
+        values:
+          component_id: '{{ parameters.name }}'
+          description: '{{ parameters.description }}'
+          destination: '{{ parseRepoUrl parameters.repoUrl }}'
+          owner: '{{ parameters.owner }}'
+          hostname: '{{#if parameters.hostname}}{{parameters.hostname}}{{else}}{{parameters.name}}.softrams.cloud{{/if}}'
 
     - id: publish
       name: Publish
