@@ -2,9 +2,13 @@ apiVersion: backstage.io/v1beta2
 kind: Template
 # some metadata about the template itself
 metadata:
-  name: v1beta3-demo
-  title: Test Action template
-  description: scaffolder v1beta3 template demo
+  name: aws-lambda-app
+  title: AWS-Lambda
+  description: Create a new AWS-lambda
+  tags:
+    - aws lambda
+    - terraform
+    - serverless
 spec:
   owner: backstage/techdocs-core
   type: service
