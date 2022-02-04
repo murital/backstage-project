@@ -12,7 +12,7 @@ spec:
   owner: Murital
   type: serverless
   parameters:
-    - title: Fill in some steps
+    - title: Fill in your lambda Info
       required:
         - name
       properties:
@@ -23,49 +23,34 @@ spec:
 #           ui:autofocus: true
 #           ui:options:
 #             rows: 5
-    
         Description:
           title: Description
           type: string
-    - title: handler
-      properties:
-        name:
+        handler:
           title: handler
           type: string
-    - title: runtime
-      properties:
-        name:
+        runtime:
           title: runtime
           type: string
-    - title: memory_size
+    - title: Fill in your lambda Properties
       properties:
-        name:
+        memory_size:
           title: memory_size
           type: number
-    - title: concurrency
-      properties:
-        name:
+        concurrency:
           title: concurrency
           type: number
-    - title: lambda_timeout
-      properties:
-        name:
-          title: Decription
+        lambda_timeout:
+          title: lambda_timeout
           type: number
-    - title: log_retention
-      properties:
-        repoUrl:
+        log_retention:
           title: log_retention
           type: number
-    - title: role_arn
-      properties:
-        repoUrl:
+        role_arn:
           title: role_arn
           type: string
-    - title: subnet_ids
-      properties:
-        repoUrl:
-          title: Decription
+        subnet_ids:
+          title: subnet_ids
           type: string
     - title: Choose a location
       required:
