@@ -64,14 +64,14 @@ spec:
 #           type: list(string)
 #           description: security_group_ids
    
-# steps:
-#     - id: template-aws-lambda
-#       name: Fetch awslambda application Template
-#       action: fetch:template
-#       input:
-#         url: ./lambda-skeleton
-#         values:
-#           function_name: '{{ parameters.function_name }}' 
+steps:
+    - id: template-aws-lambda
+      name: Fetch awslambda application Template
+      action: fetch:template
+      input:
+        url: ./lambda-skeleton
+        values:
+          function_name: '{{ parameters.function_name }}' 
 #           description: '{{ parameters.description }}'
 #           handler: '{{ parameters.handler }}'
 #           runtime: '{{ parameters.runtime }}'
