@@ -69,7 +69,7 @@ steps:
       name: Fetch awslambda application Template
       action: fetch:template
       input:
-        url: ./lambda-skeleton
+#         url: ./lambda-skeleton
         values:
           function_name: '{{ parameters.function_name }}' 
 #           description: '{{ parameters.description }}'
