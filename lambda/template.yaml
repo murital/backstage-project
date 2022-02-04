@@ -5,6 +5,8 @@ metadata:
   name: awslambda
   title: aws lambda
   description: lambda
+  tags:
+    - aws-lambda
 spec:
   owner: Murital
   type: service
