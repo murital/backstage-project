@@ -8,61 +8,61 @@ metadata:
     - aws lambda
     - terraform
     - serverless
-spec:
-  owner: backstage/techdocs-core
-  type: service
-  parameters:
-    - title: Fill in some steps
-      required:
-        - function_name
-      properties:
-        function_name:
-          title: function_name
-          type: string
-          description: Unique name of the component
-          ui:autofocus: true
-          ui:options:
-            rows: 5
-        description:
-          title: Description
-          type: string
-          description: Description of the component
-        handler:
-          title: handler
-          type: string
-          description: Description of the handler
-        runtime:
-          title: runtime
-          type: string
-          description: runtime
-        memory_size:
-          title: memory_size
-          type: number
-          description: memory_size
-        concurrency:
-          title: concurrency
-          type: number
-          description: concurrency
-        lambda_timeout:
-          title: lambda_timeout
-          type: number
-          description: lambda_timeout
-        log_retention:
-          title: log_retention
-          type: number
-          description: log_retention
-        role_arn:
-          title: role_arn
-          type: string
-          description: role_arn
-        subnet_ids:
-          title: subnet_ids
-          type: list(string)
-          description: subnet_ids
-        security_group_ids:
-          title: security_group_ids
-          type: list(string)
-          description: security_group_ids
+# spec:
+#   owner: backstage/techdocs-core
+#   type: service
+#   parameters:
+#     - title: Fill in some steps
+#       required:
+#         - function_name
+#       properties:
+#         function_name:
+#           title: function_name
+#           type: string
+#           description: Unique name of the component
+#           ui:autofocus: true
+#           ui:options:
+#             rows: 5
+#         description:
+#           title: Description
+#           type: string
+#           description: Description of the component
+#         handler:
+#           title: handler
+#           type: string
+#           description: Description of the handler
+#         runtime:
+#           title: runtime
+#           type: string
+#           description: runtime
+#         memory_size:
+#           title: memory_size
+#           type: number
+#           description: memory_size
+#         concurrency:
+#           title: concurrency
+#           type: number
+#           description: concurrency
+#         lambda_timeout:
+#           title: lambda_timeout
+#           type: number
+#           description: lambda_timeout
+#         log_retention:
+#           title: log_retention
+#           type: number
+#           description: log_retention
+#         role_arn:
+#           title: role_arn
+#           type: string
+#           description: role_arn
+#         subnet_ids:
+#           title: subnet_ids
+#           type: list(string)
+#           description: subnet_ids
+#         security_group_ids:
+#           title: security_group_ids
+#           type: list(string)
+#           description: security_group_ids
    
 # steps:
 #     - id: template-aws-lambda
