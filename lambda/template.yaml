@@ -9,7 +9,7 @@ metadata:
     - aws-lambda
 spec:
   owner: Murital
-  type: service
+  type: serverless
 
   # these are the steps which are rendered in the frontend with the form input
   parameters:
