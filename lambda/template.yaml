@@ -22,6 +22,17 @@ spec:
           ui:autofocus: true
           ui:options:
             rows: 5
+    - title: Description
+#       required:
+#         - repoUrl
+      properties:
+        repoUrl:
+          title: Decription
+          type: string
+#           ui:field: RepoUrlPicker
+#           ui:options:
+#             allowedHosts:
+#               - github.com
     - title: Choose a location
       required:
         - repoUrl
@@ -43,6 +54,7 @@ spec:
         url: ./template
         values:
           name: ${{ parameters.name }}
+          description: ${{ parameters.name }}
 
 #     - id: fetch-docs
 #       name: Fetch Docs
