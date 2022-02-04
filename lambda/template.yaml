@@ -67,14 +67,17 @@ spec:
         repoUrl:
           title: Decription
           type: string
-#       properties:
-#         repoUrl:
-#           title: Decription
-#           type: string
-#           ui:field: RepoUrlPicker
-#           ui:options:
-#             allowedHosts:
-#               - github.com
+    - title: Choose a location
+      required:
+        - repoUrl
+      properties:
+        repoUrl:
+          title: Repository Location
+          type: string
+          ui:field: RepoUrlPicker
+          ui:options:
+          allowedHosts:
+            - github.com      
     - title: Choose a location
       required:
         - repoUrl
