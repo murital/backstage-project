@@ -1,0 +1,160 @@
+apiVersion: backstage.io/v1beta2
+kind: Template
+# some metadata about the template itself
+metadata:
+  name: awslambda-api
+  title: aws lambda-api
+  description: lambda-api
+  tags:
+    - aws-lambda
+    - aws-api
+    - serverless
+spec:
+  owner: Murital
+  type: serverless
+  parameters:
+    - title: Fill in your lambda Info
+      required:
+        - function_name
+        - handler
+        - runtime
+      properties:
+        function_name:
+          title: function_name
+          type: string
+          description: lambda function name
+#           ui:autofocus: true
+#           ui:options:
+#             rows: 5
+        description:
+          title: describe your lambda
+          type: string
+        handler:
+          title: handler
+          type: string
+        runtime:
+          title: runtime
+          type: string
+    - title: Fill in your lambda Properties
+      properties:
+        memory_size:
+          title: memory_size
+          type: number
+        concurrency:
+          title: concurrency
+          type: number
+        lambda_timeout:
+          title: lambda_timeout
+          type: number
+        log_retention:
+          title: log_retention
+          type: number
+        role_arn:
+          title: role_arn
+          type: string
+    - title: Fill in s3_key and s3_bucket
+      properties:
+        s3_key:
+          title: s3_key
+          type: string
+        s3_bucket:
+          title: s3_bucket
+          type: string
+    - title: Fill in subnet_ids and security_group_ids
+      properties:
+        subnet_ids:
+          title: subnet_ids
+          type: string
+        security_group_ids:
+          title: security_group_ids
+          type: string
+    - title: Fill in your API Info
+      required:
+        - name
+      properties:
+        name:
+          title: name
+          type: string
+          description: api function name
+        api_execution_arn:
+          title: api_execution_arn
+          type: string
+        path_name:
+          title: path_name
+          type: string
+        rest_api_id:
+          title: rest_api_id 
+          type: string
+        metrics:
+          title: metrics
+          type: string
+        log_level :
+          title: log_level 
+          type: string
+        api_domain_name :
+          title: api_domain_name
+          type: string
+        domain :
+          title: domain
+          type: string
+        
+    - title: Choose your location
+      required:
+        - repoUrl
+      properties:
+        repoUrl:
+          title: Repository Location
+          type: string
+          ui:field: RepoUrlPicker
+          ui:options:
+            allowedHosts:
+              - github.com      
+  steps:
+    - id: fetch-base
+      name: Fetch Base
+      action: fetch:template
+      input:
+        url: ./lambda-api-skeleton
+        values:
+          function_name: '{{ parameters.function_name }}'
+          description: '{{ parameters.description }}'
+          handler: '{{ parameters.handler }}'
+          runtime: '{{ parameters.runtime }}'
+          memory_size: '{{ parameters.memory_size }}'
+          concurrency: '{{ parameters.concurrency }}'
+          lambda_timeout: '{{ parameters.lambda_timeout }}'
+          log_retention: '{{ parameters.log_retention }}'
+          role_arn: '{{ parameters.role_arn }}'
+          s3_key: '{{ parameters.s3_key }}'
+          s3_bucket: '{{ parameters.s3_bucket }}'
+          subnet_ids: '{{ parameters.subnet_ids }}'
+          security_group_ids: '{{parameters.security_group_ids}}'
+          name: '{{ parameters.name }}'
+          api_execution_arn: '{{parameters.api_execution_arn}}'
+          path_name: '{{parameters.path_name}}'
+          rest_api_id: '{{parameters.rest_api_id}}'
+          metrics: '{{parameters.metrics}}'
+          log_level: '{{parameters.log_level}}'
+          api_domain_name: '{{parameters.api_domain_name}}'
+          doamin: '{{parameters.doamin}}'
+          
+    - id: publish
+      name: Publish
+      action: publish:github
+      input:
+        allowedHosts: ['github.com']
+        description: This is '{{ parameters.name }}'
+        repoUrl: '{{ parameters.repoUrl }}'
+        defaultBranch: 'main'
+
+    - id: register
+      name: Register
+      action: catalog:register
+      input:
+        repoContentsUrl: ${{ steps.publish.output.repoContentsUrl }}
+        catalogInfoPath: '/catalog-info.yaml'
+
+  output:
+    links:
+      - url: '{{steps.publish.output.remoteUrl}}'
+        text: 'Go to PR'
