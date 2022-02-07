@@ -1,26 +1,20 @@
 module "lambda" {
-  source = "git@github.com:softrams-iac/terraform-aws-lambda.git?ref=v2.2.1"
-
+  source          = "git@github.com:softrams-iac/terraform-aws-lambda.git?ref=v2.2.1"
   function_name  = "${{values.function_name}}"
   description    = "${{values.description}}"
   handler        = "${{values.handler}}"
   runtime        = "${{values.runtime}}"
-  memory_size    = "${{values.memory_size }}"
-  concurrency    = "${{values.concurrency}}"
-  lambda_timeout = "${{values.lambda_timeout}}"
+  memory_size    = "${{values.memory_size }}tvalues.lambda_timeout}}"
   log_retention  = "${{values.log_retention}}"
   role_arn       = "${{values.role_arn}}"
-
-
-  s3_key    = "${{values.s3_key}}"
-  s3_bucket = "${{values.s3_bucket}}"
-
-
+  s3_key         = "${{values.s3_key}}"
+  s3_bucket      = "${{values.s3_bucket}}"
   vpc_config = {
     subnet_ids         = "${{values.subnet_ids}}"
     security_group_ids = "${{values.security_group_ids}}"
   }
 }
+
 module "api" {
   source                  = "git@github.com:softrams-iac/terraform-aws-api.git//?ref=1.0.3"
   name                    = "${{values.name}}-${module.lambda.function_name}"
